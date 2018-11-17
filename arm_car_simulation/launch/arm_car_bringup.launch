@@ -3,4 +3,5 @@
    <include file="$(find arm_car_simulation)/launch/arm_car_gazebo_trajectory_follow.launch"/>
    <include file="$(find arm_car_simulation)/launch/arm_car_gazebo_states.launch"/>
    <include file="$(find arm_car_moveit)/launch/arm_car_moveit_planning_executing.launch"/>
+<!--   <include file="$(find arm_car_simulation)/launch/arm_car_gazebo_base.launch"/>-->
 </launch>

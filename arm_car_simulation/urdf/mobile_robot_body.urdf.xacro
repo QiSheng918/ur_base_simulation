@@ -1,8 +1,8 @@
 <?xml version="1.0"?>  
     <robot name="mobile_robot_body" xmlns:xacro="http://ros.org/wiki/xacro">  
-      <property name="M_PI" value="3.14159"/>  
+      <xacro:property name="M_PI" value="3.14159"/>  
    
-      <include filename="$(find arm_car_simulation)/urdf/gazebo.urdf.xacro"/>  
+      <xacro:include filename="$(find arm_car_simulation)/urdf/gazebo.urdf.xacro"/>  
 
 <xacro:macro name="transmission_acro" params="joint_name">
 <transmission name="${joint_name}_tran1">
@@ -16,16 +16,17 @@
     </actuator>
 </transmission>
 </xacro:macro>
-      <property name="base_x" value="0.33" />  
-      <property name="base_y" value="0.33" />  
+
+      <xacro:property name="base_x" value="0.33" />  
+      <xacro:property name="base_y" value="0.33" />  
 
       <xacro:macro name="mobile_robot_body">  
 
         <link name="base_link">  
         <inertial>  
-          <origin xyz="0 0 0.055"/>  
-          <mass value="1.0" />  
-          <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>  
+          <origin xyz="0 0 -0.1"/>  
+          <mass value="150.0" />  
+          <inertia ixx="10.0" ixy="0.0" ixz="0.0" iyy="10.0" iyz="0.0" izz="10.0"/>  
         </inertial>  
         <visual>  
           <geometry>  
@@ -48,7 +49,7 @@
      <link name="left_front_wheel">  
         <inertial>  
           <origin  xyz="0.08 0.08 0.025"/>  
-          <mass value="0.1" />  
+          <mass value="1" />  
            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>  
         </inertial>  
         <visual>  
@@ -72,7 +73,7 @@
         <axis xyz="0 0 1"/>  
         <parent link="base_link"/>  
         <child link="left_front_wheel"/>  
-        <origin rpy="0 1.57075 1.57075" xyz="0.3 0.3 0.1"/>  
+        <origin rpy="0 1.57075 1.57075" xyz="0.3 0.325 0.1"/>  
         <limit effort="100" velocity="100"/>  
         <joint_properties damping="0.0" friction="0.0"/>  
       </joint>  
@@ -81,7 +82,7 @@
       <link name="right_front_wheel">  
         <inertial>  
           <origin xyz="0.08 -0.08 0.025"/>  
-          <mass value="0.1" />  
+          <mass value="1" />  
            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>  
         </inertial>  
         <visual>  
@@ -106,7 +107,7 @@
         <axis xyz="0 0 1"/>  
         <parent link="base_link"/>  
         <child link="right_front_wheel"/>  
-        <origin rpy="0 1.57075 1.57075" xyz="0.3 -0.3 0.1"/>  
+        <origin rpy="0 1.57075 1.57075" xyz="0.3 -0.325 0.1"/>  
         <limit effort="100" velocity="100"/>  
         <joint_properties damping="0.0" friction="0.0"/>  
      </joint>  
@@ -116,7 +117,7 @@
      <link name="left_back_wheel">  
         <inertial>  
           <origin xyz="-0.08 0.08 0.025"/>  
-          <mass value="0.1" />  
+          <mass value="1" />  
            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>  
         </inertial>  
         <visual>  
@@ -141,7 +142,7 @@
         <axis xyz="0 0 1"/>  
         <parent link="base_link"/>  
         <child link="left_back_wheel"/>  
-        <origin rpy="0 1.57075 1.57075" xyz="-0.3 0.3 0.1"/>  
+        <origin rpy="0 1.57075 1.57075" xyz="-0.3 0.325 0.1"/>  
         <limit effort="100" velocity="100"/>  
         <joint_properties damping="0.0" friction="0.0"/>  
       </joint>  
@@ -151,7 +152,7 @@
       <link name="right_back_wheel">  
         <inertial>  
            <origin xyz="-0.08 -0.08 0.025"/>  
-           <mass value="0.1" />  
+           <mass value="1" />  
            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>  
         </inertial>  
         <visual>  
@@ -176,7 +177,7 @@
         <axis xyz="0 0 1"/>  
         <parent link="base_link"/>  
         <child link="right_back_wheel"/>  
-        <origin rpy="0 1.57075 1.57075" xyz="-0.3 -0.3 0.1"/>  
+        <origin rpy="0 1.57075 1.57075" xyz="-0.3 -0.325 0.1"/>  
         <limit effort="100" velocity="100"/>  
         <joint_properties damping="0.0" friction="0.0"/>  
       </joint>  
@@ -210,10 +211,10 @@
       <joint name="tobox" type="fixed">  
         <parent link="base_link"/>  
         <child link="head"/>  
-        <origin xyz="0.2 0 0.38"/>  
+        <origin xyz="0.1 0 0.38"/>  
       </joint>  
       
-    <xacro:transmission_acro joint_name="left_back_wheel_joint"/> 
+  <xacro:transmission_acro joint_name="left_back_wheel_joint"/> 
   <xacro:transmission_acro joint_name="right_back_wheel_joint"/> 
   <xacro:transmission_acro joint_name="left_front_wheel_joint"/> 
   <xacro:transmission_acro joint_name="right_front_wheel_joint"/> 

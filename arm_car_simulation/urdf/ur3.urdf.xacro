@@ -68,7 +68,7 @@
      wrist_2_lower_limit:=${-pi}    wrist_2_upper_limit:=${pi}
      wrist_3_lower_limit:=${-pi}    wrist_3_upper_limit:=${pi}">
 
-    <link name="${prefix}base_link" >
+    <link name="${prefix}ur_base_link" >
       <visual>
         <geometry>
           <mesh filename="package://ur_description/meshes/ur3/visual/base.dae"/>
@@ -88,7 +88,7 @@
     </link>
 
     <joint name="${prefix}shoulder_pan_joint" type="revolute">
-      <parent link="${prefix}base_link" />
+      <parent link="${prefix}ur_base_link" />
       <child link = "${prefix}shoulder_link" />
       <origin xyz="0.0 0.0 ${shoulder_height}" rpy="0.0 0.0 0.0" />
       <axis xyz="0 0 1" />

@@ -6,7 +6,7 @@
 
   <!-- Load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-    output="screen" ns="arm_car_robot" args="arm_controller2 joint_controller arm_controller "/>
+    output="screen" ns="arm_car_robot" args="joint_controller arm_controller2 arm_controller "/>
 
   <!-- Convert joint states to TF transforms for rviz, etc -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"

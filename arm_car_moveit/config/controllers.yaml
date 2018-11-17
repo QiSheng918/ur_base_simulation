@@ -11,3 +11,12 @@ controller_list:
      - wrist_1_joint
      - wrist_2_joint
      - wrist_3_joint
+#  - name: base_controller
+#    action_ns: follow_joint_trajectory
+#    type: FollowJointTrajectory
+#    default: true
+#    joints:
+#     - left_back_wheel_joint
+#     - right_back_wheel_joint
+#     - left_front_wheel_joint
+#     - right_front_wheel_joint

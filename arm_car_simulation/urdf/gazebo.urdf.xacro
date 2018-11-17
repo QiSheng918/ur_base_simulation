@@ -40,7 +40,7 @@
       </plugin>
     </gazebo>
 
-    <!-- <gazebo reference="${name}_footprint">
+    <gazebo reference="base_link">
       <gravity>true</gravity>
       <selfCollide>true</selfCollide>
     </gazebo> -->
