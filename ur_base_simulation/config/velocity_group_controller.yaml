@@ -4,22 +4,12 @@
 #    type: joint_state_controller/JointStateController
 #    publish_rate: 50
   # Position Controllers ---------------------------------------
-  velocity_controller_group:
-    type: velocity_controllers/JointGroupVelocityController
-    joints: 
-      - panda_joint1
-      - panda_joint2
-      - panda_joint3
-      - panda_joint4
-      - panda_joint5
-      - panda_joint6
-      - panda_joint7
-
-  finger_joint1_velocity_controller:
-    type: velocity_controllers/JointVelocityController
-    joint: panda_finger_joint1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
-  finger_joint2_velocity_controller:
-    type: velocity_controllers/JointVelocityController
-    joint: panda_finger_joint2
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+velocity_group_controller:
+  type: velocity_controllers/JointGroupVelocityController
+  joints: 
+    - shoulder_pan_joint
+    - shoulder_lift_joint
+    - elbow_joint
+    - wrist_1_joint
+    - wrist_2_joint
+    - wrist_3_joint

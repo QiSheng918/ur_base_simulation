@@ -6,6 +6,8 @@
    </include>
    <include file="$(find ur_base_simulation)/launch/controllers/ur_base_joint_states_controller.launch"/>
    <include file="$(find ur_base_simulation)/launch/controllers/ur_base_trajectory_controller.launch"/>
+
+   <include file="$(find ur_base_simulation)/launch/controllers/ur_base_velocity_group_controller.launch"/>
    <include file="$(find ur10_base_moveit)/launch/ur10_base_moveit_planning_executing.launch"/>
 
 </launch>
