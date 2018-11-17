@@ -1,0 +1,22 @@
+controller_manager_ns: controller_manager
+controller_list:
+  - name: arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+     - shoulder_pan_joint
+     - shoulder_lift_joint
+     - elbow_joint
+     - wrist_1_joint
+     - wrist_2_joint
+     - wrist_3_joint
+#  - name: base_controller
+#    action_ns: follow_joint_trajectory
+#    type: FollowJointTrajectory
+#    default: true
+#    joints:
+#     - left_back_wheel_joint
+#     - right_back_wheel_joint
+#     - left_front_wheel_joint
+#     - right_front_wheel_joint
