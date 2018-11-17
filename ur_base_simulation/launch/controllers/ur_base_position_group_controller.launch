@@ -1,0 +1,8 @@
+<launch>
+
+    <rosparam file="$(find ur_base_simulation)/config/position_group_controller.yaml" command="load"/>
+
+    <node name="arm_velocity_group_controller" pkg="controller_manager"  type="controller_manager"   respawn="false"
+output="screen"  args="load position_group_controller"/> 
+ 
+</launch>
