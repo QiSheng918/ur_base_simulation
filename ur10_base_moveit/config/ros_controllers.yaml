@@ -10,10 +10,6 @@ ur10_base:
 # Settings for ros_control hardware interface
   hardware_interface:
     joints:
-      - left_back_wheel_joint
-      - left_front_wheel_joint
-      - right_back_wheel_joint
-      - right_front_wheel_joint
       - shoulder_pan_joint
       - shoulder_lift_joint
       - elbow_joint

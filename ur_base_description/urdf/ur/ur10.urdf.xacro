@@ -99,7 +99,7 @@
       <xacro:if value="${joint_limited}">
         <limit lower="${shoulder_pan_lower_limit}" upper="${shoulder_pan_upper_limit}" effort="330.0" velocity="2.16"/>
       </xacro:if>
-      <dynamics damping="0.0" friction="0.0"/>
+      <dynamics damping="0.0" friction="200.0"/>
     </joint>
 
     <link name="${prefix}shoulder_link">
